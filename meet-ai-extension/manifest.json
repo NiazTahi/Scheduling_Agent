@@ -1,0 +1,30 @@
+{
+    "name": "Meet AI Assistant",
+    "version": "0.1",
+    "manifest_version": 3,
+    "permissions": [
+      "identity",
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://meet.google.com/*"
+    ],
+    "oauth2": {
+      "client_id": "863347911633-d89sf1mlelfl060bvp7b36tckqvfdn57.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/calendar.readonly"
+      ]
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://meet.google.com/*"],
+        "js": ["inject.js"]
+      }
+    ]
+  }
+  
